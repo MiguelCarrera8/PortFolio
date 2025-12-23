@@ -1,0 +1,436 @@
+/* ========== ADVANCED ANIMATIONS & EFFECTS ========== */
+
+/* CSS Custom Properties for dynamic animations */
+:root {
+    --animation-duration: 0.6s;
+    --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce-timing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Fix z-index issues */
+.scroll-indicator {
+    z-index: 15 !important;
+    pointer-events: none;
+}
+
+.scroll-indicator .scroll-arrow {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.section-title {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== LOADING ANIMATIONS ========== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-180deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+/* ========== HERO ANIMATIONS ========== */
+.hero-title {
+    animation: slideInDown 0.8s var(--animation-timing) 0.2s both;
+}
+
+.hero-description {
+    animation: slideInUp 0.8s var(--animation-timing) 0.4s both;
+}
+
+.hero-buttons {
+    animation: slideInUp 0.8s var(--animation-timing) 0.6s both;
+}
+
+.profile-img {
+    animation: fadeInScale 1s var(--bounce-timing) 0.8s both;
+}
+
+.image-decoration {
+    animation: rotateIn 1s var(--animation-timing) 1s both;
+}
+
+/* ========== HOVER EFFECTS ========== */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all var(--animation-duration) var(--animation-timing);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* ========== CARD HOVER EFFECTS ========== */
+.project-card, .skill-category, .education-card {
+    transition: all var(--animation-duration) var(--animation-timing);
+    position: relative;
+}
+
+.project-card::before,
+.skill-category::before,
+.education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    border-radius: inherit;
+    transition: opacity var(--animation-duration) var(--animation-timing);
+    z-index: -1;
+}
+
+.project-card:hover::before,
+.skill-category:hover::before,
+.education-card:hover::before {
+    opacity: 0.05;
+}
+
+/* ========== SKILL BAR ANIMATIONS ========== */
+.skill-progress {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* ========== TIMELINE ANIMATIONS ========== */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s var(--animation-timing);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(50px);
+}
+
+.timeline-item:nth-child(even).visible {
+    transform: translateX(0);
+}
+
+.timeline-marker {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* ========== FORM ANIMATIONS ========== */
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    transition: all var(--animation-duration) var(--animation-timing);
+    border: 2px solid var(--border-light);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(3, 152, 158, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-group label {
+    transition: all var(--animation-duration) var(--animation-timing);
+    transform-origin: left top;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    transform: translateY(-25px) scale(0.9);
+    color: var(--primary-color);
+}
+
+/* ========== NAVIGATION ANIMATIONS ========== */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all var(--animation-duration) var(--animation-timing);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Mobile menu animation */
+.nav-menu {
+    /* transform: translateX(-100%); */
+    transition: transform var(--animation-duration) var(--animation-timing);
+}
+
+.nav-menu.active {
+    transform: translateX(0);
+}
+
+.nav-menu.active .nav-link {
+    animation: slideInLeft 0.4s var(--animation-timing) calc(var(--i) * 0.1s) both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========== SCROLL ANIMATIONS ========== */
+.parallax-element {
+    transition: transform 0.1s ease-out;
+}
+
+/* ========== BACK TO TOP ANIMATION ========== */
+.back-to-top {
+    animation: bounceIn 0.6s var(--bounce-timing);
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(100px);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ========== THEME TRANSITION ========== */
+* {
+    transition: background-color var(--animation-duration) var(--animation-timing),
+                color var(--animation-duration) var(--animation-timing),
+                border-color var(--animation-duration) var(--animation-timing);
+}
+
+/* ========== LOADING STATES ========== */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ========== MICRO INTERACTIONS ========== */
+.social-link, .project-link, .contact-icon {
+    transition: all var(--animation-duration) var(--bounce-timing);
+}
+
+.social-link:hover,
+.project-link:hover {
+    transform: translateY(-5px) rotate(5deg);
+}
+
+.contact-icon:hover {
+    transform: scale(1.1) rotate(-5deg);
+    background: var(--primary-color);
+}
+
+.contact-icon:hover i {
+    color: white;
+}
+
+/* ========== SUCCESS ANIMATIONS ========== */
+@keyframes checkmark {
+    0% {
+        stroke-dasharray: 0 50;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 50 50;
+        stroke-dashoffset: -50;
+    }
+}
+
+.success-checkmark {
+    animation: checkmark 0.6s var(--animation-timing);
+}
+
+/* ========== ERROR SHAKE ANIMATION ========== */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.error-shake {
+    animation: shake 0.6s var(--animation-timing);
+}
+
+/* ========== REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .parallax-element {
+        transform: none !important;
+    }
+}
+
+/* ========== PRINT ANIMATIONS ========== */
+@media print {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ========== PERFORMANCE OPTIMIZATIONS ========== */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Apply to elements that will be animated */
+.project-card,
+.skill-category,
+.timeline-item,
+.profile-img {
+    will-change: transform, opacity;
+}
+
+/* Clean up will-change after animations */
+.animation-complete {
+    will-change: auto;
+}

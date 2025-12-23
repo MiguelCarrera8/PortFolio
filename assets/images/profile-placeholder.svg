@@ -1,0 +1,19 @@
+<!-- Placeholder Profile Image -->
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <!-- Background -->
+  <rect width="500" height="500" fill="#f3f4f6"/>
+  
+  <!-- Person silhouette -->
+  <g transform="translate(250, 250)">
+    <!-- Head -->
+    <circle cx="0" cy="-80" r="50" fill="#d1d5db"/>
+    
+    <!-- Body -->
+    <path d="M -80 20 L -80 120 L 80 120 L 80 20 Q 80 -30 40 -30 L -40 -30 Q -80 -30 -80 20" fill="#d1d5db"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="250" y="450" font-family="Inter, sans-serif" font-size="24" font-weight="600" text-anchor="middle" fill="#6b7280">
+    Foto de Perfil
+  </text>
+</svg>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional de Miguel Ángel Carrera Cebrián - Desarrollador Full Stack">
+    <meta name="keywords" content="portfolio, desarrollador, full stack, web development, programación">
+    <meta name="author" content="Miguel Ángel Carrera Cebrián">
+    
+    <title>Miguel Ángel Carrera Cebrián - Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="apple-touch-icon" href="./assets/icons/icon-192x192.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="rgb(3, 152, 158)">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="MA Portfolio">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+        <p>Cargando Portfolio...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">MA</a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active" data-section="home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" data-section="about">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link" data-section="skills">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link" data-section="experience">Experiencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link" data-section="projects">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#education" class="nav-link" data-section="education">Formación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link" data-section="contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section home-section">
+            <div class="home-container">
+                <div class="home-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="greeting">¡Hola!</span>
+                            <span class="name">Soy Miguel Ángel</span>
+                            <span class="role typed-text"></span>
+                        </h1>
+                        <p class="hero-description">
+                            Desarrollador Web y Mobile con más de 3 años de experiencia en proyectos reales, 
+                            combinando desarrollo end-to-end con análisis funcional y liderazgo técnico.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i>
+                                Contáctame
+                            </a>
+                            <a href="./assets/cv/Miguel_Angel_Carrera_Cebrian_CV.pdf" target="_blank" class="btn btn-secondary">
+                                <i class="fas fa-download"></i>
+                                Descargar CV
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="./assets/images/profile.png" alt="Miguel Ángel Carrera Cebrián" class="profile-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Conóceme</span>
+                    <h2 class="section-title">Sobre mí</h2>
+                    <p class="section-description">
+                        Un desarrollador comprometido con la excelencia técnica
+                    </p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-paragraph">
+                            Soy Miguel Ángel Carrera Cebrián, desarrollador Web y Mobile con más de 3 años de 
+                            experiencia en proyectos reales. Me especializo en Angular, Ionic y Laravel, 
+                            combinando desarrollo técnico con análisis funcional y liderazgo de equipos.
+                        </p>
+                        <p class="about-paragraph">
+                            Mi experiencia abarca desde el análisis de requisitos hasta el despliegue en 
+                            producción, pasando por el diseño de arquitecturas escalables y la coordinación 
+                            técnica. Trabajo en entornos ágiles con foco en calidad y mantenibilidad del código.
+                        </p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">3+</span>
+                                <span class="stat-label">Años de Experiencia</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">20+</span>
+                                <span class="stat-label">Proyectos Completados</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">8+</span>
+                                <span class="stat-label">Tecnologías Dominadas</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Competencias</span>
+                    <h2 class="section-title">Mis Habilidades</h2>
+                    <p class="section-description">
+                        Tecnologías y herramientas que domino
+                    </p>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Frontend Skills -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-desktop"></i>
+                            Frontend & Mobile
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Angular</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Ionic</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5/CSS3</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Skills -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-server"></i>
+                            Backend
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Laravel</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">PHP</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Django</span>
+                                    <span class="skill-percentage">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="50"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java</span>
+                                    <span class="skill-percentage">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Database Skills -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-database"></i>
+                            Bases de Datos
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">MongoDB</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Leadership & Soft Skills -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-users"></i>
+                            Liderazgo y Análisis
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Liderazgo Técnico</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Análisis Funcional</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Planificación Técnica</span>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="88"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools Skills -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-tools"></i>
+                            Herramientas
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Android Studio</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">VS Code</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Atlassian</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Trayectoria</span>
+                    <h2 class="section-title">Experiencia Profesional</h2>
+                    <p class="section-description">
+                        Mi recorrido en el desarrollo de software
+                    </p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-period">Junio 2022 - Presente</div>
+                            <h3 class="timeline-title">Desarrollador Web y Mobile · Analista · Tech Lead</h3>
+                            <h4 class="timeline-company">Xerintel Internet Technologies SL</h4>
+                            <p class="timeline-description">
+                                Desarrollo completo de aplicaciones web y móviles desde análisis hasta producción. 
+                                Liderazgo técnico de equipos de 2-4 desarrolladores, diseño de arquitecturas escalables 
+                                y coordinación técnica con cliente y producto.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Angular</span>
+                                <span class="skill-tag">Ionic</span>
+                                <span class="skill-tag">Laravel</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio</span>
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                    <p class="section-description">
+                        Algunos de mis trabajos más representativos
+                    </p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/images/app-deportes.png" alt="App de Entrenamientos Personalizados">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.xerintel.fitmylegs2342&hl=es_419" class="project-link" target="_blank" title="Google Play Store">
+                                        <i class="fab fa-google-play"></i>
+                                    </a>
+                                    <a href="https://apps.apple.com/es/app/fitmylegs-reduce-la-celulitis/id1626788847" class="project-link" target="_blank" title="App Store">
+                                        <i class="fab fa-app-store-ios"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">App de Entrenamientos Personalizados</h3>
+                            <p class="project-description">
+                                Aplicación completa para planificación de entrenamientos con sistema de 
+                                recordatorios, calendario personalizado y gestión de usuarios.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Ionic</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/images/delivery.png" alt="Sistema de Gestión para Restaurantes">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.xerintel.wippiwippi1234&hl=es_419" class="project-link" target="_blank" title="Google Play Store">
+                                        <i class="fab fa-google-play"></i>
+                                    </a>
+                                    <a href="https://apps.apple.com/es/app/wippiwippi/id1663198211" class="project-link" target="_blank" title="App Store">
+                                        <i class="fab fa-app-store-ios"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Plataforma tipo Delivery</h3>
+                            <p class="project-description">
+                                Plataforma web completa para gestión de pedidos, usuarios y restaurantes 
+                                con integración de mapas, geolocalización y pasarelas de pago.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Google Maps API</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/images/android.jpg" alt="Plugin Nativo Android">
+                            
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Plugin Nativo Android</h3>
+                            <p class="project-description">
+                                Plugin de Android desarrollado para abrir automáticamente la aplicación 
+                                al recibir llamadas, con integración directa al sistema operativo.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Android Studio</span>
+                                <span class="tech-tag">Android SDK</span>
+                                <span class="tech-tag">Native</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Aprendizaje</span>
+                    <h2 class="section-title">Formación Académica</h2>
+                    <p class="section-description">
+                        Mi trayectoria educativa y certificaciones
+                    </p>
+                </div>
+                
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3 class="education-title">Grado Superior Desarrollo de Aplicaciones Web</h3>
+                            <h4 class="education-institution">IES Francisco Romero Vargas</h4>
+                            <p class="education-period">2020 - 2022</p>
+                            <p class="education-description">
+                                Formación técnica en desarrollo web, bases de datos, programación y 
+                                diseño de aplicaciones.
+                            </p>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">¡Hablemos!</span>
+                    <h2 class="section-title">Contacto</h2>
+                    <p class="section-description">
+                        ¿Tienes un proyecto en mente? ¡Me encantaría escucharte!
+                    </p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>miguecarrera65@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Teléfono</h3>
+                                <p>605 88 01 32</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Ubicación</h3>
+                                <p>España</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/miguel-ángel-carrera-cebrián-a347b71b2" class="social-link" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Miguel Ángel Carrera Cebrián. Todos los derechos reservados.</p>
+                <p>Desarrollado con ❤️ y mucho código</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

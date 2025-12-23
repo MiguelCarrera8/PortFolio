@@ -1,0 +1,117 @@
+/* ========== MOBILE OPTIMIZATIONS ========== */
+
+/* Mobile-specific improvements */
+@media (max-width: 767px) {
+    /* Fix home section padding to avoid overlap with navbar */
+    .home-section {
+        padding: 140px 0 5rem;
+    }
+    
+    /* Improve touch targets */
+    .btn, .nav-link, .social-link, .project-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Optimize text sizes for mobile */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Reduce padding for mobile */
+    .section {
+        padding: 5rem 0;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* Stack hero buttons vertically on very small screens */
+    @media (max-width: 480px) {
+        .hero-buttons {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+    /* Optimize skill bars for touch */
+    .skill-category {
+        padding: 1.5rem;
+    }
+    
+    /* Make timeline more mobile-friendly */
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-item {
+        padding-left: 2.5rem;
+    }
+    
+    .timeline-marker {
+        left: 6px;
+    }
+    
+    /* Optimize project cards for mobile */
+    .project-card {
+        margin-bottom: 2rem;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    /* Contact form improvements */
+    .contact-content {
+        gap: 2rem;
+    }
+    
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    /* Social links spacing */
+    .social-links {
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* Sharper borders and shadows */
+    .nav-link, .btn, .project-card, .skill-category {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+    .home-section {
+        min-height: 70vh;
+        padding: 80px 0 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 1.5rem 0;
+    }
+}
