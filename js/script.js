@@ -4,8 +4,8 @@ let isMenuOpen = false;
 let typedTextElement;
 let observerOptions = {
     root: null,
-    rootMargin: '-50px',
-    threshold: 0.1
+    rootMargin: '-30px', // Reduced margin for better iOS compatibility
+    threshold: 0.15 // Increased threshold for iOS
 };
 
 // ========== INITIALIZATION ==========
@@ -274,28 +274,39 @@ function initScrollAnimations() {
         }
     });
     
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Trigger skill bars animation if it's a skills section
-                if (entry.target.closest('#skills')) {
-                    animateSkillBars();
+    // Intersection Observer for animations with iOS fallback
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger skill bars animation if it's a skills section
+                    if (entry.target.closest('#skills')) {
+                        animateSkillBars();
+                    }
+                    
+                    // Trigger counter animation if it's about section
+                    if (entry.target.closest('#about')) {
+                        // Add delay for iOS
+                        setTimeout(animateCounters, 300);
+                    }
                 }
-                
-                // Trigger counter animation if it's about section
-                if (entry.target.closest('#about')) {
-                    animateCounters();
-                }
-            }
+            });
+        }, observerOptions);
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
         });
-    }, observerOptions);
-    
-    animateElements.forEach(element => {
-        observer.observe(element);
-    });
+    } else {
+        // Fallback for browsers without IntersectionObserver support
+        animateElements.forEach(element => {
+            element.classList.add('visible');
+        });
+        // Trigger animations immediately
+        setTimeout(animateSkillBars, 1000);
+        setTimeout(animateCounters, 1500);
+    }
 }
 
 // ========== SKILL BARS ==========
@@ -322,19 +333,27 @@ function animateCounters() {
     
     counters.forEach(counter => {
         const target = parseInt(counter.textContent);
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
         
-        const timer = setInterval(() => {
-            current += step;
+        // Simple iOS-friendly animation using requestAnimationFrame
+        let current = 0;
+        const increment = target / 60; // 60 frames for smooth animation
+        
+        function updateCounter() {
+            current += increment;
             if (current >= target) {
                 counter.textContent = target + '+';
-                clearInterval(timer);
             } else {
                 counter.textContent = Math.floor(current) + '+';
+                requestAnimationFrame(updateCounter);
             }
-        }, 16);
+        }
+        
+        // Fallback for iOS - just show final value if requestAnimationFrame fails
+        try {
+            requestAnimationFrame(updateCounter);
+        } catch (e) {
+            counter.textContent = target + '+';
+        }
     });
 }
 
