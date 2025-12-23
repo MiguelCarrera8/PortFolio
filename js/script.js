@@ -333,27 +333,8 @@ function animateCounters() {
     
     counters.forEach(counter => {
         const target = parseInt(counter.textContent);
-        
-        // Simple iOS-friendly animation using requestAnimationFrame
-        let current = 0;
-        const increment = target / 60; // 60 frames for smooth animation
-        
-        function updateCounter() {
-            current += increment;
-            if (current >= target) {
-                counter.textContent = target + '+';
-            } else {
-                counter.textContent = Math.floor(current) + '+';
-                requestAnimationFrame(updateCounter);
-            }
-        }
-        
-        // Fallback for iOS - just show final value if requestAnimationFrame fails
-        try {
-            requestAnimationFrame(updateCounter);
-        } catch (e) {
-            counter.textContent = target + '+';
-        }
+        // Just show the final value without animation
+        counter.textContent = target + '+';
     });
 }
 
